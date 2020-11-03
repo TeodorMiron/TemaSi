@@ -10,8 +10,9 @@ def server_program():
     k3 = b'\x14\xf4E\xdfA\xc2\x82\x08d\x14\x96\xfbo\xebn\xe4'
     iv = b'\x14\xf4E\xdfA\xc2\x82\x08d\x14\x96\xfbo\xebn\xe4'
     q=10
-    stri="Python provides the various function to read the file, but we will use the most common read() function. It takes an argument called size, which is nothing but a given number of characters to be read from the file. If the size is not specified, then it will read the entire file."
-    stringg=stri
+    fileObject = open("text.txt", "r")
+    dat = fileObject.read()
+    stringg=dat
     host = socket.gethostname()
     port = 5000  # initiate port no above 1024
 
@@ -24,7 +25,7 @@ def server_program():
     conn, address = server_socket.accept()  # accept new connection
     print("Connection from: " + str(address))
     while True:
-        stringg = stri
+        stringg = dat
         data = input(' -> ')
         if(data == "CBC"):
             conn.send(data.encode())

@@ -1,0 +1,1 @@
+Python provides the various function to read the file, but we will use the most common read() function. It takes an argument called size, which is nothing but a given number of characters to be read from the file. If the size is not specified, then it will read the entire file.
